@@ -1,0 +1,13 @@
+{% set train = validation() %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<p>We predicted correctly {% if algorithm.knn or algorithm.dt or algorithm.rf %}<code>{{ (1 - train.0 / train.1 ) * 100 }}%</code>{% elif algorithm.nn %}<code>{{ (train.0 / train.1 ) * 100 }}</code>{% endif %} of the time on a validation set of <code>{{ train.1 }}</code> examples.</p>
+{% if algorithm.knn or algorithm.nn %}<p>Our dataset is the <a href="https://en.wikipedia.org/wiki/MNIST_database">MNIST database</a> and we trained on <code>{{ train.2 }}</code> examples with {% endif %}{% if algorithm.knn %}a <code>k</code> value of <code>{{ train.3 }}</code>.</p>{% endif %}{% if algorithm.nn %} iterations.</p>{% endif %}
+{% if algorithm.dt or algorithm.rf %}<p>We trained on <code>{{ train.2 }}</code> examples with <code>{{ train.3 }}</code> tree{% if algorithm.rf %}s with a maximum depth of <code>{{ train.4 }}</code>{% endif %}.</p>{% endif %}
+</body>
+<footer>
+<button><a href="/">Go Back</a></button>
+</footer>

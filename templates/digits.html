@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KNN or Neural net</title>
+</head>
+<body>
+	<h2>Example data point from our dataset</h2>
+   	{% for row in example.0 %}
+	<p>
+		{{row}}
+    </p>
+	{% endfor %}
+	<h3>Its label:</h3>
+	<p>
+		{{example.1}}
+	</p>
+	<form method="post">
+		<label for="nn">Use Neural Network to Train Model on Full Dataset (takes 30 minutes)</label>
+        <input type="radio" name="alg" value="nn">
+		<label for="knn">Use K-Nearest Neighbors to Train Model on Full Dataset (takes 30 secs)</label>
+		<input type="radio" name="alg" value="knn">
+		<p>
+        <input type="submit" value="Submit">
+		<p>
+    </form>
+</body>
+</html>

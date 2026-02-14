@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Decision Tree or Random Forest</title>
+</head>
+<body>
+	<h2>Example data point from our dataset</h2>
+	<p>{{ example.0 }}</p>
+	<h3>Its label:</h3>
+	<p>{{ example.1 }}</p>
+	<form method="post">
+		<label for="nn">Use Decision Tree to Train Model on Full Dataset</label>
+        <input type="radio" name="alg" value="dt">
+		<label for="knn">Use Random Forest to Train Model on Full Dataset (takes 30 secs)</label>
+		<input type="radio" name="alg" value="rf">
+		<p>
+        <input type="submit" value="Submit">
+		<p>
+    </form>
+</body>
+</html>
