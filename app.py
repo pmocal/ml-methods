@@ -1,11 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
 from decimal import *
 from pathlib import Path
-from sklearn.model_selection import train_test_split
-
 import fileinput, random, math
+
+from flask import Flask, render_template, request, redirect, url_for
+from waitress import serve
 import numpy, pickle
 import scipy.io as sio
+from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 
@@ -302,3 +303,5 @@ def switch():
         return render_template("email.html", example = (random.choice(list(Path('./spam-dataset/spam/').iterdir())).read_text(), 'Spam'))
     else:
         return render_template("email.html", example = (random.choice(list(Path('./spam-dataset/ham/').iterdir())).read_text(), 'Genuine email'))
+
+serve(app, listen='*:8080')
