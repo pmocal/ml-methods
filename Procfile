@@ -1,1 +1,1 @@
-web: python waitress_server.py
+web: waitress_serve --listen "*:PORT" --trusted-proxy '*' --threads 1 app:app
