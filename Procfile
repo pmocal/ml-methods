@@ -1,1 +1,1 @@
-web: waitress_serve --listen "*:PORT" --trusted-proxy '*' --threads 1 app:app
+web: waitress-serve --listen "*:PORT" --trusted-proxy '*' --threads 1 app:app
