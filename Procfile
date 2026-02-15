@@ -7,4 +7,4 @@ web: waitress-serve \
     --cleanup-interval 2700 \
 	--channel-timeout 2700 \
 	--threads 1 \
-    app:wsgifunc
+    app:app
