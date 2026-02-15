@@ -1,1 +1,1 @@
-web: python waitress-server.py
+web: python waitress_server.py
