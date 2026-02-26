@@ -287,7 +287,7 @@ def celery_init_app(app: Flask) -> Celery:
 app = Flask(__name__)
 app.config.from_mapping(
     CELERY=dict(
-        broker_url=os.environ['CLOUDAMQP_URL']
+        broker_url=os.environ['CLOUDAMQP_URL'],
         result_backend='rpc://',
         task_ignore_result=False,
     ),
