@@ -312,12 +312,13 @@ def default_get():
 def default_post():
     if request.form.get('alg') == 'nn':
         app.g = nn_validation.delay()
-        return render_template("nn.html", str = f"Task ID {app.g.id} will take up to half an hour. Clicking the button below will retrieve the result if it's ready.")
+        return render_template("nn.html", str = f"Your task (ID {app.g.id}) will take up to half an hour. Clicking the button below will retrieve the result if it's ready.")
     elif request.form.get('alg') == 'knn':
         return render_template("results.html", validation = knn_validation, algorithm = { 'knn': True })
     else:
-        return render_template("nn.html", str = f"We predicted correctly {(app.g.result[0] / app.g.result[1]) * 100}% of the time on a validation set of {app.g.result[1]} examples. \
-            Our dataset is the MNIST database and we trained on {app.g.result[2]} examples with {app.g.result[3]} iterations." if app.g.ready() else "Not yet ready, please wait longer. Clicking the button below will retrieve the result if it's ready.")
+        return render_template("nn.html", ready = app.g.ready(), str = f"We predicted correctly {(app.g.result[0] / app.g.result[1]) * 100}% of the time on a validation set of {app.g.result[1]} examples. \
+            Our dataset is the MNIST database and we trained on {app.g.result[2]} examples with {app.g.result[3]} iterations." if app.g.ready() else f"Task ID {app.g.id} not yet ready, please wait longer. \
+            Clicking the button below will retrieve the result if it's ready.")
  
 @app.route("/email", methods=['GET','POST'])
 def switch():
