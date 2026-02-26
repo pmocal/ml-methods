@@ -312,7 +312,7 @@ def default_get():
 def default_post():
     if request.form.get('alg') == 'nn':
         app.g = nn_validation.delay()
-        return render_template("nn.html", str = "Processing will take up to half an hour. Clicking the button below will retrieve the result if it's ready.")
+        return render_template("nn.html", str = f"Task ID {app.g.id} will take up to half an hour. Clicking the button below will retrieve the result if it's ready.")
     elif request.form.get('alg') == 'knn':
         return render_template("results.html", validation = knn_validation, algorithm = { 'knn': True })
     else:
