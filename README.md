@@ -9,7 +9,7 @@ My neural network achieved a score of 0.95780 when run on Kaggle's test data.
 
 ## K-Nearest Neighbors
 
-The dataset used for this algorithm is also MNIST.
+The dataset that I used this algorithm on is also MNIST.
 
 For multiple groups of __n__ points with a certain class __c__, I assigned the class whose points were closest on average to my point __p__.
 
