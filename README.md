@@ -1,8 +1,8 @@
 ## Background
 
-I have built popular AI techniques from scratch. Users can apply them to recognize digits or to identify emails as spam.
+I've built popular AI techniques from scratch. Users can apply them to recognize digits or to identify emails as spam.
 
-I entered the neural network code into a Kaggle competition to recognize digits in the MNIST dataset.
+I entered my neural network code into a Kaggle competition to recognize digits in the MNIST dataset.
 
 From the Kaggle competition [page](https://www.kaggle.com/c/digit-recognizer):
 > MNIST ("Modified National Institute of Standards and Technology") is the de facto “hello world” dataset of computer vision. Since its release in 1999, this classic dataset of handwritten images has served as the basis for benchmarking classification algorithms. As new machine learning techniques emerge, MNIST remains a reliable resource for researchers and learners alike.
