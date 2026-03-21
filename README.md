@@ -1,6 +1,6 @@
 ## Background
 
-Users can apply popular AI techniques that I have built here from scratch.
+I have built popular AI techniques from scratch. Users can apply them to recognize digits or identify emails as spam.
 
 I entered the neural network code into a Kaggle competition to recognize digits in the MNIST dataset.
 
